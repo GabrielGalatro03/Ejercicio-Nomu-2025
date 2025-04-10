@@ -19,5 +19,7 @@ PARTE 2 Otra cosa que no contemplamos es que los Nomus pueden tener muchos poder
 Se pide:
 
 1- Averiguar la probabilidad de daño crítico del último poder que un Nomu consiguió.
+
 2- Saber si un poder es usado cuerpo a cuerpo, esto está definido por su rango de ataque, siendo cuerpo a cuerpo si el rango es menor a 100.
+
 3- Saber si un poder es solamente de curación(esto pasa cuando no tiene cantidad de daño por uso y si tiene curación por uso)
