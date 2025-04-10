@@ -8,7 +8,7 @@ Categorías de un Nomu:
  - Los nomus fuertes son aquellos que su fuerza es inferior a 10000 y mayor que 3000
  - Por último, los nomus high-end poseen una fuerza mayor a 10000
  - En otro caso son categoría “pichi”
- - 
+   
 PARTE 2 Otra cosa que no contemplamos es que los Nomus pueden tener muchos poderes, como super regeneración, super fuerza, fuego, y teletransportación, entre otros… Sabemos que un poder tiene:
 
  - Cantidad de curación por uso
