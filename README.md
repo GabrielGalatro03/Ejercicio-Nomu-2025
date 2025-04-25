@@ -9,17 +9,6 @@ Categorías de un Nomu:
  - Por último, los nomus high-end poseen una fuerza mayor a 10000
  - En otro caso son categoría “pichi”
    
-PARTE 2 Otra cosa que no contemplamos es que los Nomus pueden tener muchos poderes, como super regeneración, super fuerza, fuego, y teletransportación, entre otros… Sabemos que un poder tiene:
 
- - Cantidad de curación por uso
- - Cantidad de daño por uso
- - Rango de ataque
- - Probabilidad de daño crítico
-
-Se pide:
-
-1- Averiguar la probabilidad de daño crítico del último poder que un Nomu consiguió.
-
-2- Saber si un poder es usado cuerpo a cuerpo, esto está definido por su rango de ataque, siendo cuerpo a cuerpo si el rango es menor a 100.
-
-3- Saber si un poder es solamente de curación(esto pasa cuando no tiene cantidad de daño por uso y si tiene curación por uso)
+PARTE 2 Dada una lista de nomus se quiere entrenarlos y saber si el ejercito puede ir a la guerra despues del entrenamiento. Entrenar un nomu aumenta su fuerza dos mil veces y para que un ejercito pueda ir a la guerra todos los nomus deben tener una fuerza mayor a 2500. 
+Ademas queremos saber cuales nomus de nuestro ejercito, para eso deben cumplir la condicion de la parte 1.
