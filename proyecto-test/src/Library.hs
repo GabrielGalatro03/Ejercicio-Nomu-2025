@@ -1,8 +1,6 @@
 module Library where
 import PdePreludat
 
-
-
 data Nomu = UnNomu {
     alas :: Bool,
     brazos :: Bool,
@@ -12,47 +10,50 @@ data Nomu = UnNomu {
     fuerza :: Number
 }deriving(Show, Eq)
 
-nomu1 :: Nomu
-nomu1 = UnNomu False True 2 "oscuro" 1000 3000
-
-nomu2 :: Nomu
-nomu2 = UnNomu {
-    alas = True,
-    brazos = False,
-    ojos = 0,
-    piel = "blanco",
-    vida = 3000,
-    fuerza = 900
-}
-
 puedeVer :: Nomu -> Bool
 puedeVer nomu = ojos nomu > 0 
 
 categoria :: Nomu -> String
 categoria (UnNomu _ _ _ _ _ fuerza)
+            | fuerza < 1000 = "pichi"
             | fuerza >= 1000 && fuerza < 3000 = "comun"
             | fuerza >= 3000 && fuerza < 10000 = "fuerte"
-            | fuerza >= 10000 = "high-end"
-            | otherwise = "pichi"
+            | otherwise = "high-end"
 
-data Poderes = UnPoder {
-    cantCuracion :: Number,
-    cantDaño :: Number,
-    rango :: Number,
-    proba :: Number
-}deriving(Show, Eq)
 
-poder1 :: Poderes
-poder1 = UnPoder 0 2000 3000 50
+nomu1 :: Nomu
+nomu1 = UnNomu False True 2 "oscuro" 1000 3000
 
-poder2 :: Poderes
-poder2 = UnPoder 150 5000 50 75
+nomu2 :: Nomu
+nomu2 = UnNomu True True 1 "blanco" 1000 500
 
-poder3 :: Poderes
-poder3 = UnPoder 10000 0 10 100
+nomu3 :: Nomu
+nomu3 = UnNomu True True 3 "blanco" 1000 100
 
-cuerpoAcuerpo :: Poderes -> Bool
-cuerpoAcuerpo ataque = rango ataque < 100
+nomu4 :: Nomu
+nomu4 = UnNomu True False 2 "oscuro" 1000 6000
 
-tipoCuracion :: Poderes -> Bool
-tipoCuracion cura = cantDaño cura == 0 && cantCuracion cura > 0
+nomu5 :: Nomu
+nomu5 = UnNomu False True 1 "oscuro" 1000 2500
+
+
+nomus :: [Nomu]
+nomus = [nomu1, nomu2, nomu3, nomu4, nomu5]
+
+entrenaNomu :: Nomu -> Nomu
+entrenaNomu nomu = nomu{fuerza = fuerza nomu + 2000}
+
+entrenarEjercito :: [Nomu] -> [Nomu]
+entrenarEjercito  = map entrenaNomu 
+
+fuerzaMayorA :: Nomu -> Bool
+fuerzaMayorA nomu = fuerza nomu >= 2500
+
+puedenIrAlaGuerra  :: [Nomu] -> Bool
+puedenIrAlaGuerra  = all fuerzaMayorA . entrenarEjercito
+
+esFuerte :: Nomu -> Bool
+esFuerte nomu = categoria nomu == "fuerte"
+
+nomusFuertes :: [Nomu] -> [Nomu]
+nomusFuertes = filter esFuerte 
