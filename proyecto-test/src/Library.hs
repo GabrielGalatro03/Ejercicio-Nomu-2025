@@ -80,4 +80,4 @@ entrenamientoElegidos :: [Nomu] -> [Nomu]
 entrenamientoElegidos = map entrenaElegido . filter esElegido 
 
 entrenaElegido :: Nomu -> Nomu
-entrenaElegido nomu = nomu{fuerza = fuerza nomu + 3000, piel = "dorada"}
+entrenaElegido = entrenarNomu . entrenarNomu
